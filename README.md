@@ -18,13 +18,11 @@ Example usage:
 
 function SpawnVehicle(modelHash)
     local vehicle = CreateVehicle(modelHash, coords.x, coords.y, coords.z, true, false)
-
     exports["LegacyFuel"]:SetFuel(vehicle, 100)
 end
 
 function StoreVehicleInGarage(vehicle)
     local plate = GetVehicleNumberPlateText(vehicle)
     local fuelLevel = exports["LegacyFuel"]:GetFuel(vehicle)
-
     TriggerServerEvent('vehiclesStored', plate, fuelLevel)
 end
